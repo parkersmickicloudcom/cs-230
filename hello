@@ -1,0 +1,86 @@
+/**
+ * Class representing a Dungeons & Dragons Game.
+ */
+class DnDGame {
+    /**
+     * Constructor for the DnDGame class.
+     *
+     * @param {string} playerName - The name of the player.
+     */
+    constructor(playerName) {
+        this.playerName = playerName;
+        this.characters = [];
+        this.campaigns = [];
+    }
+
+    /**
+     * Method to add a character to the game.
+     *
+     * @param {object} character - The character object to be added.
+     */
+    addCharacter(character) {
+        this.characters.push(character);
+    }
+
+    /**
+     * Method to remove a character from the game.
+     *
+     * @param {object} character - The character object to be removed.
+     */
+    removeCharacter(character) {
+        const index = this.characters.indexOf(character);
+        if (index !== -1) {
+            this.characters.splice(index, 1);
+        }
+    }
+
+    /**
+     * Method to add a campaign to the game.
+     *
+     * @param {object} campaign - The campaign object to be added.
+     */
+    addCampaign(campaign) {
+        this.campaigns.push(campaign);
+    }
+
+    /**
+     * Method to remove a campaign from the game.
+     *
+     * @param {object} campaign - The campaign object to be removed.
+     */
+    removeCampaign(campaign) {
+        const index = this.campaigns.indexOf(campaign);
+        if (index !== -1) {
+            this.campaigns.splice(index, 1);
+        }
+    }
+
+    /**
+     * Method to reference D&D rules using D&D Beyond.
+     *
+     * @param {string} ruleName - The name of the rule to reference.
+     */
+    referenceRule(ruleName) {
+        console.log(`Referencing D&D rule '${ruleName}' on D&D Beyond.`);
+    }
+}
+
+// Usage Example for DnDGame
+
+// Creating a new D&D game instance
+const dndGame = new DnDGame("Adventurer");
+
+// Adding characters to the game
+const character1 = { name: "Gandalf", class: "Wizard" };
+const character2 = { name: "Aragorn", class: "Ranger" };
+dndGame.addCharacter(character1);
+dndGame.addCharacter(character2);
+
+// Adding campaigns to the game
+const campaign1 = { name: "The Quest for the Ring", location: "Middle-earth" };
+const campaign2 = { name: "Dragon's Lair", location: "Unknown Lands" };
+dndGame.addCampaign(campaign1);
+dndGame.addCampaign(campaign2);
+
+// Referencing a D&D rule
+dndGame.referenceRule("Combat Rules");
